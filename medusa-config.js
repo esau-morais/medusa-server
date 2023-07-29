@@ -47,6 +47,12 @@ const plugins = [
   `medusa-fulfillment-manual`,
   `medusa-payment-manual`,
   {
+    resolve: `medusa-payment-stripe`,
+    options: {
+      api_key: process.env.STRIPE_API_KEY,
+    },
+  },
+  {
     resolve:
       process.env.NODE_ENV === "development"
         ? `@medusajs/file-local`
